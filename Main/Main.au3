@@ -1,11 +1,11 @@
-##include-once
+#include-once
 #include <Includes.au3>
 
 Func tela_principal()
 
     Global $tela_principal = GUICreate("", 800, 600, -1, -1, $WS_POPUP)
 
-    $plano_fundo = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\iniciar_1.png", 0, 0, 800, 600)
+    $plano_fundo = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\Main_pf.png", 0, 0, 800, 600)
     ;$heroi_usado = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\guerreiro_1.png", 303, 382, 208, 205)
     WinSetOnTop($tela_principal, "",0)
 
@@ -36,8 +36,8 @@ Func tela_principal()
     GUICtrlSetFont(-1, 12, 700, "", "Copperplate Gothic Bold")
 	GUICtrlSetBkColor(-1, 0x8B0000)
 
-    $btn_img_heroi = GUICtrlCreateButton("", 303, 382, 208, 205, $BS_BITMAP)
-    $btn_img_heroi = GUICtrlSetImage(-1, @ScriptDir & "\..\Imagens\guerreiro_1.bmp")
+    ;$btn_img_heroi = GUICtrlCreateButton("", 303, 382, 208, 205, $BS_BITMAP)
+    ;GUICtrlSetImage(-1, @ScriptDir & "\..\Imagens\guerreiro_1.bmp")
 
     ; Move as imagens para o fundo
     GUICtrlSetState($plano_fundo, $GUI_DISABLE)
@@ -48,6 +48,10 @@ Func tela_principal()
     While 1
         Switch GUIGetMsg()
             Case $GUI_EVENT_CLOSE, $btn_sair
+                ExitLoop
+            Case $btn_herois;, $btn_img_heroi
+                GUIDelete($tela_principal)
+                tela_herois()
                 ExitLoop
         EndSwitch
     WEnd
