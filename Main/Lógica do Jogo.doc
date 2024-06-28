@@ -1,0 +1,103 @@
+                                            Lords Of War
+
+É um jogo de estratégia de guerra, inicialmente você pode selecionar um guerreiro e treiná-lo.
+A medida que ele treina seus atributos (Ataque, Defesa, Inteligência, Força, Agilidade) aumentam.
+
+
+                                                Treino:
+
+Ataque: 
+Treino de espada, lança, arco e flexa, martelo de guerra, etc. Os equipamentos podem ser comprados
+ou alugados. Quando comprados o treino é mais eficiente. O Guerreiro também pode treinar sozinho,
+mas é menos efetivo que treinar com os equipamentos de treino.
+O atributo de ataque é atualizado a cada dia que passa.
+
+Defesa:
+Treino feito com escudos e armas (tbm podem ser comprados, alugados ou treinar sozinho).
+
+Inteligência:
+Treino com livros de estratégia de combate, professores.
+Livros podem ser adiquiridos (São mais caros que armas) ou alugados, professores podem ser pagos para ensinar
+e quanto melhor o professor mais caro ele cobrará e mais efetivo será o treino.
+A Inteligência é mais difícil de ser treinada, mas a sua vantagem é que em combate ela multiplica os demais
+atributos
+
+Força:
+A força é treinável na academia onde você pode alugar os aparelhos, ou poderá comprá-los (Ao comprar os
+aparelhos você pode treinar outros guerreiros).
+
+Agilidade:
+Pode ser melhorada com instrutores de esgrima, correndo, subindo as escadarias dos templos.
+
+
+                                                Mercado:
+Podem ser encontrados e vendidos equipamentos (Armas, escudos, capacetes).
+
+                                                Ferreiro:
+Pode ser encomendado equipamentos (armas, escudos, capacetes) ao ferreiro, demora uns dias a ficar pronto
+mas diferente do mercado você pode escolher os atributos do seu equipamento.
+
+                                                Cavalo
+O cavalo pode ser usado em determinadas situações e batalhas e aumenta bastante os atributos do guerreiro.
+Tem o preço alto em relação a equipamentos, e quanto mais caro o cavalo, maior é o aumento de atributos.
+O cavalo pode ser treinado e seu valor aumenta quando ainda é jovem a medida que aumenta os atributos 
+(Força, Velocidade). A medida que envelhece o treino fica menos eficiente e seu valor diminui. 
+Cavalos começam com 4 e vão até 25 anos, até os 20 seus atributos aumentam e depois disso diminuem.
+
+                                                Armas
+As armas aumentam o atributo de Ataque, quanto melhor a arma maior o aumento da força. As armas de batalha
+são diferentes das armas de treino.
+Escudos: Aumentam o atributo de Defesa
+Espadas, Lanças, Arco e Flexa, machados, martelos: aumentam o atributo de ataque.
+
+                                                batalhas
+Nas batalhas os atributos (Ataque, Defesa, Inteligência, Força, Agilidade) são utilizados.
+o Ataque é a habilidade de quebrar a defesa do oponente.
+a Defesa é a habilidade de denfender os pontos de vida (são sempre 100) contra ataques adversários.
+A Inteligência multiplica o Ataque e Defesa.
+A força aumenta o ataque.
+a Agilidade aumenta a defesa.
+
+Após vencer 100 batalhas, é possível selecionar outro guerreiro e a cada 100 batalhas vencidas (Somando
+as batalhas de todos os guerreiro) é possível selecionar outro guerreiro.
+
+Quando se tem 3 guerreiro é possível realizar batalhas em grupo. 
+Existem as batalhas de 3, 5, 10, 50 e 100 guerreiros.
+
+Após ter 100 guerreiros é possível comprar um castelo, conquistar um (muito difícil).
+Esse castelo pode ser melhorado o que aumenta sua defesa contra invasores.
+
+Após ter 100 guerreiros também é possível fazer guerra (diferente de batalhas).
+Nas GUERRAS você pode saquear o castelo de inimigos quando se consegue conquistá-los (Quase impossível) 
+e obter dinheiro com isso.
+Caso tente fazer guerra e perca seus guerreiros ficam com danos durante 1 mês e nesse tempo não é possível
+treinar e após isso durante mais 1 mês a efetividade do treino cai pela metade.
+Caso vença a guerra, o efeito acontece com os guerreiros inimigos.
+
+                                                Dinheiro
+o Dinheiro é usado para comprar e alugar as coisas do jogo (armas, escudos, cavalos, treinadores, castelos)
+pode-se obter dinheiro vencendo batalhas, guerras e vendendo itens.
+O dinheiro é usado para recrutar guerreiros, e a cada vitória em batalhas uma parte fica com o guerreiro.
+
+                                                Guerreiro
+Os guerreiros iniciais começam com 16 anos e podem lutar até 60 quando se aposentam.
+Até os 45 o treino pode aumentar, dos 45 até os 55 o treino não aumenta e após os 55 os
+atributos diminuem.
+Os primeiros 3 guerreiros tem de 16 a 18 anos, do quarto em diante a idade varia de 16 até 45 anos.
+quanto mais evoluido o guerreiro mais caro será para recrutá-lo.
+Após ganhar uma batalha, parte do dinheiro ganho fica com o guerreiro e quanto mais você gastou
+para treiná-lo menor é essa taxa (máximo 70% minimo 10%).
+O dinheiro do guerreiro é uma forma de gratidão que ele tem, logo se ele não batalha, 
+caso receba a proposta de outro jogador será mais fácil ele deixar o seu comando.
+Quando um guerreiro recebe oferta de outro jogador você pode optar por aceitar ou não. 
+Caso o guerreiro esteja insatisfeito você deve pagar um bônus para que ele permaneça.
+Incialmente serão criados 10 guerreiros para escolha de 1. A cada 100 vitórias serão gerados mais 10. ->
+após ter um castelo você pode equipar sua academia para que novos guerreiros sejam gerados e treinados
+esses podem aparecer a cada semana com 16 anos.
+
+
+                                Compra de guerreiros de outros jogadores.
+Você pode comprar guerreiros de outros jogadores oferecendo um valor que ele escolhe aceitar ou não.
+
+                                                Tempo do Jogo.
+Cada ano passa em um intervalo de 120 dias, a cada 120 dias a idade de guerreiros e cavalos aumentam.
