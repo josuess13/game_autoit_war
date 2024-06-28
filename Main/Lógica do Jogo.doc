@@ -43,6 +43,7 @@ Tem o preço alto em relação a equipamentos, e quanto mais caro o cavalo, maio
 O cavalo pode ser treinado e seu valor aumenta quando ainda é jovem a medida que aumenta os atributos 
 (Força, Velocidade). A medida que envelhece o treino fica menos eficiente e seu valor diminui. 
 Cavalos começam com 4 e vão até 25 anos, até os 20 seus atributos aumentam e depois disso diminuem.
+um cavalo é único para cada guerreiro, um guerreiro deve ter 100 vitórias para ter um cavalo.
 
                                                 Armas
 As armas aumentam o atributo de Ataque, quanto melhor a arma maior o aumento da força. As armas de batalha
@@ -99,5 +100,12 @@ esses podem aparecer a cada semana com 16 anos.
                                 Compra de guerreiros de outros jogadores.
 Você pode comprar guerreiros de outros jogadores oferecendo um valor que ele escolhe aceitar ou não.
 
-                                                Tempo do Jogo.
+                                            Tempo do Jogo.
 Cada ano passa em um intervalo de 120 dias, a cada 120 dias a idade de guerreiros e cavalos aumentam.
+
+
+                                            Arena
+Na arena é possível desafiar guerreiros que são colocados para batalhar e ganhar dinheiro a cada vitória.
+É possível batalhar apenas 10 vezes por dia.
+Você pode colocar guerreiros para batalhar automaticamente na arena e ele pode ser
+desafiado por guerreiros rivais, após lutar 10 batalhas seu guerreiro não ficará mais disponível na arena.

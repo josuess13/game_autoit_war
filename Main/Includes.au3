@@ -10,3 +10,4 @@
 
 #include <Main.au3>
 #include <Herois.au3>
+#include <Menus.au3>
