@@ -28,4 +28,4 @@ Func tela_principal()
 
 EndFunc
 
-tela_principal()
+;tela_principal()
