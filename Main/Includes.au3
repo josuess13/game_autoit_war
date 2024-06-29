@@ -7,7 +7,8 @@
 #include <ButtonConstants.au3>
 #include <ColorConstants.au3>
 #include <StaticConstants.au3>
+#include <GuiListView.au3>
 
 #include <Main.au3>
-#include <Herois.au3>
 #include <Menus.au3>
+#include "Guerreiros/Recrutar.au3"
