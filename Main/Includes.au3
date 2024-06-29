@@ -11,4 +11,5 @@
 
 #include <Main.au3>
 #include <Menus.au3>
+#include <Mensagens.au3>
 #include "Guerreiros/Recrutar.au3"
