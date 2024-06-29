@@ -28,21 +28,21 @@ Func tela_recrutar_guerreiros()
 
     ;card
     GUICtrlCreateGroup("16 Anos", 485, 430, 300, 100)
-    GUICtrlSetFont(-1, 18, 700, 0, "Artifakt Element Heavy")
+    GUICtrlSetFont(-1, 18, 700, 0, "Arial Black")
 
     Local $descricao_guerreiro = GUICtrlCreateLabel("Guerreiro forte e pronto para a luta", 490, 465, 290, 60)
-    GUICtrlSetFont(-1, 12, "", 0, "Artifakt Element Heavy")
+    GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
     GUICtrlSetColor(-1, $COLOR_SLATEGRAY)
 
     GUICtrlCreateGroup("", -99, -99, 1, 1) ;close group
 
     ; Botões
     $btn_recrutar_guerreiro = GUICtrlCreateButton("Recrutar", 490, 540, 90, 40)
-    GUICtrlSetFont(-1, 12, "", 0, "Artifakt Element Heavy")
+    GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
     $btn_recusar_guerreiro = GUICtrlCreateButton("Recusar", 590, 540, 90, 40)
-    GUICtrlSetFont(-1, 12, "", 0, "Artifakt Element Heavy")
+    GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
     $btn_sair_guerreiro = GUICtrlCreateButton("Sair", 690, 540, 90, 40)
-    GUICtrlSetFont(-1, 12, "", 0, "Artifakt Element Heavy")
+    GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
     
     GUISetState(@SW_SHOW, $tela_recrutar_guerreiros)
 

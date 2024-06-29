@@ -1,6 +1,6 @@
 #include-once
 #include <Includes.au3>
-
+tela_principal()
 Func tela_principal()
 
     Global $tela_principal = GUICreate("", 800, 600, -1, -1, $WS_POPUP)
