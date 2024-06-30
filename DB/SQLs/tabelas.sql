@@ -1,12 +1,14 @@
-CREATE TABLE "usuarios" (  -- 1
+CREATE TABLE "jogadores" (  -- 1
 	"id"	INTEGER NOT NULL,
 	"login"	TEXT NOT NULL,
 	"senha"	TEXT NOT NULL,
+	"dias_jogados"	INTEGER NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
 
 CREATE TABLE "recrutas" ( -- 2
 	"id"	INTEGER NOT NULL,
+	"id_jogador"	INTEGER NOT NULL,
 	"nome"	TEXT NOT NULL,
 	"ataque"	REAL NOT NULL,
 	"defesa"	REAL NOT NULL,
@@ -15,12 +17,14 @@ CREATE TABLE "recrutas" ( -- 2
 	"agilidade"	REAL NOT NULL,
 	"idade"	INTEGER NOT NULL,
 	"caminho_imagem"	TEXT NOT NULL,
-	"status_recruta"	INTEGER NOT NULL, -- 0 Disponível, 1 Recrutado, 2 Despedido
-	PRIMARY KEY("id" AUTOINCREMENT)
+	"status_recruta"	INTEGER NOT NULL, -- 0 Disponível, 1 Recrutado
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("id_jogador") REFERENCES "jogadores"("id")
 );
 
 CREATE TABLE "guerreiros" (
 	"id"	INTEGER NOT NULL,
+	"id_jogador"	INTEGER NOT NULL,
 	"nome"	TEXT NOT NULL,
 	"ataque"	REAL NOT NULL,
 	"defesa"	REAL NOT NULL,
@@ -30,7 +34,8 @@ CREATE TABLE "guerreiros" (
 	"idade"	INTEGER NOT NULL,
 	"caminho_imagem"	TEXT NOT NULL,
     "vitorias"	INTEGER NOT NULL,
-	PRIMARY KEY("id" AUTOINCREMENT)
+	PRIMARY KEY("id" AUTOINCREMENT),
+	FOREIGN KEY("id_jogador") REFERENCES "jogadores"("id")
 );
 
 CREATE TABLE "nomes" (
@@ -124,7 +129,6 @@ INSERT INTO nomes(nome) VALUES('Pericles');
 INSERT INTO nomes(nome) VALUES('Phidias');
 INSERT INTO nomes(nome) VALUES('Ptolemy');
 INSERT INTO nomes(nome) VALUES('Pythagoras');
-INSERT INTO nomes(nome) VALUES('Seleucus');
 INSERT INTO nomes(nome) VALUES('Socrates');
 INSERT INTO nomes(nome) VALUES('Solon');
 INSERT INTO nomes(nome) VALUES('Sophonias');
@@ -182,7 +186,6 @@ INSERT INTO nomes(nome) VALUES('Sohrab');
 INSERT INTO nomes(nome) VALUES('Tahmuras');
 INSERT INTO nomes(nome) VALUES('Vahid');
 INSERT INTO nomes(nome) VALUES('Vash');
-INSERT INTO nomes(nome) VALUES('Xerxes');
 INSERT INTO nomes(nome) VALUES('Yazdegerd');
 INSERT INTO nomes(nome) VALUES('Zahhak');
 INSERT INTO nomes(nome) VALUES('Zal');
