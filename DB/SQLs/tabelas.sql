@@ -6,6 +6,23 @@ CREATE TABLE "jogadores" (  -- 1
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
 
+CREATE TABLE "imagem_recruta" ( 
+	"id"	INTEGER NOT NULL,
+	"caminho_imagem"	TEXT NOT NULL,
+	PRIMARY KEY("id")
+);
+ 
+-- Fazer os inserts para as imagens
+
+CREATE TABLE "imagem_guerreiros" ( 
+	"id"	INTEGER NOT NULL,
+	"caminho_imagem"	TEXT NOT NULL,
+	"nivel"	INTEGER NOT NULL,
+	PRIMARY KEY("id")
+);
+
+-- Fazer os inserts para as imagens
+
 CREATE TABLE "recrutas" ( -- 2
 	"id"	INTEGER NOT NULL,
 	"id_jogador"	INTEGER NOT NULL,
@@ -16,10 +33,11 @@ CREATE TABLE "recrutas" ( -- 2
 	"forca"	REAL NOT NULL,
 	"agilidade"	REAL NOT NULL,
 	"idade"	INTEGER NOT NULL,
-	"caminho_imagem"	TEXT NOT NULL,
+	"imagem_recruta_id"	TEXT NOT NULL,
 	"status_recruta"	INTEGER NOT NULL, -- 0 Disponível, 1 Recrutado
 	PRIMARY KEY("id" AUTOINCREMENT),
 	FOREIGN KEY("id_jogador") REFERENCES "jogadores"("id")
+	FOREIGN KEY("imagem_recruta_id") REFERENCES "imagem_recruta"("id")
 );
 
 CREATE TABLE "guerreiros" (
@@ -32,8 +50,9 @@ CREATE TABLE "guerreiros" (
 	"forca"	REAL NOT NULL,
 	"agilidade"	REAL NOT NULL,
 	"idade"	INTEGER NOT NULL,
-	"caminho_imagem"	TEXT NOT NULL,
+	"imagem_guerreiro_id"	TEXT NOT NULL,
     "vitorias"	INTEGER NOT NULL,
+	"nivel"	INTEGER NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT),
 	FOREIGN KEY("id_jogador") REFERENCES "jogadores"("id")
 );

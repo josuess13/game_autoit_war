@@ -13,7 +13,7 @@ Func criar_tela_login()
     GUICtrlSetFont(-1, 14, 800)
     GUICtrlSetBkColor(-1, 0xB8860B)
     GUICtrlSetFont(-1, 14, 700, 0, "Arial Black")
-    Local $input_login = GUICtrlCreateInput("", 140, 60, 200, 30, $ES_CENTER)
+    Global $input_login = GUICtrlCreateInput("", 140, 60, 200, 30, $ES_CENTER)
     GUICtrlSetFont(-1, 14, 800)
     GUICtrlSetFont(-1, 14, 700, 0, "Arial Black")
     GUICtrlSetBkColor(-1, 0xB0C4DE)
@@ -24,7 +24,7 @@ Func criar_tela_login()
     GUICtrlSetFont(-1, 14, 800)
     GUICtrlSetBkColor(-1, 0xB8860B)
     GUICtrlSetFont(-1, 14, 700, 0, "Arial Black")
-    Local $input_senha = GUICtrlCreateInput("", 140, 140, 200, 30, BitOr($ES_PASSWORD, $ES_CENTER))
+    Global $input_senha = GUICtrlCreateInput("", 140, 140, 200, 30, BitOr($ES_PASSWORD, $ES_CENTER))
     GUICtrlSetFont(-1, 14, 800)
     GUICtrlSetBkColor(-1, 0xB0C4DE)
 
@@ -52,6 +52,12 @@ Func criar_tela_login()
                 ControlFocus($tela_login, "text", $input_login)
             Case $acessar_senha
                 ControlFocus($tela_login, "text",$input_senha)
+            Case $button_login
+                If validar_login_e_senha() == "OK" Then
+                    GUIDelete($tela_login)
+                    tela_principal()
+                    ExitLoop
+                EndIf
     EndSwitch
     WEnd
 EndFunc
