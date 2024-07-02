@@ -4,7 +4,7 @@ Func tela_recrutar_guerreiros()
 
     Global $tela_recrutar_guerreiros = GUICreate("", 800, 600, -1, -1, BitOR($WS_POPUP, $WS_EX_LAYERED))
     WinSetOnTop($tela_recrutar_guerreiros, "",0)
-    GUISetBkColor(0xFFFFFF)
+    GUISetBkColor(0x778899)
 
     ; Grid
     Global $listar_guerreiros_recrutas = GUICtrlCreateListView("Guerreiro | Ataque | Defesa | Inteligência | Força | Agilidade", 20, 20, 455, 560)
@@ -22,7 +22,7 @@ Func tela_recrutar_guerreiros()
 	_GUICtrlListView_SetTextColor($listar_guerreiros_recrutas, 0x000000)
 
     ; Imagem do guerreiro
-    local $imagem_guerreiro = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\herois\Hercules_simples.bmp", 485, 20, 300, 400)
+    local $imagem_guerreiro = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\herois\teste2.bmp", 485, 20, 300, 400)
     If @error Then MsgBox(0, "", "Erro ao mostrar imagem")
     GUICtrlSetState($imagem_guerreiro, $GUI_DISABLE)
 
@@ -32,7 +32,7 @@ Func tela_recrutar_guerreiros()
 
     Local $descricao_guerreiro = GUICtrlCreateLabel("Guerreiro forte e pronto para a luta", 490, 465, 290, 60)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
-    GUICtrlSetColor(-1, $COLOR_SLATEGRAY)
+    GUICtrlSetColor(-1, $COLOR_ALICEBLUE)
 
     GUICtrlCreateGroup("", -99, -99, 1, 1) ;close group
 
