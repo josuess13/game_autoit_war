@@ -65,7 +65,7 @@ Func criar_tela_login()
                     tela_principal()
                     ExitLoop
                 EndIf
-    EndSwitch
+        EndSwitch
     WEnd
 EndFunc
 
