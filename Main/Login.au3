@@ -3,7 +3,7 @@
 
 Func criar_tela_login()
     $tela_login = GUICreate("", 400, 400, -1, -1, $WS_POPUP)
-    WinSetOnTop($tela_login, "", 1)
+    WinSetOnTop($tela_login, "", 0)
 
     local $plano_fundo_login = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\login.png", 0, 0, 400, 400)
     GUICtrlSetState($plano_fundo_login, $GUI_DISABLE)
@@ -58,6 +58,8 @@ Func criar_tela_login()
                     tela_principal()
                     ExitLoop
                 EndIf
+            Case $button_cadastrar
+                cadastra_novo_jogador()
     EndSwitch
     WEnd
 EndFunc
