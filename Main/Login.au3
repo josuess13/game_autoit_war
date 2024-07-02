@@ -59,7 +59,12 @@ Func criar_tela_login()
                     ExitLoop
                 EndIf
             Case $button_cadastrar
-                cadastra_novo_jogador()
+                Local $cadastro = cadastra_novo_jogador()
+                If $cadastro == "Cadastrado" Then
+                    GUIDelete($tela_login)
+                    tela_principal()
+                    ExitLoop
+                EndIf
     EndSwitch
     WEnd
 EndFunc

@@ -20,7 +20,7 @@ Global $sDatabase = @ScriptDir & "\..\DB\DB.db"
 #include <SQLite.dll.au3>
 
 #include "Guerreiros\Recrutar.au3"
-#include "C:\autoit\game_autoit_war\DB\Conexoes\conexoes.au3"
-#include "C:\autoit\game_autoit_war\DB\Conexoes\conexoes_login.au3"
+#include "..\DB\Conexoes\conexoes.au3"
+#include "..\DB\Conexoes\conexoes_login.au3"
 
 ;If FileExists(@ScriptDir & "\..\DB\DB.db" ) Then MsgBox(0, "", "AAAAAAAAAAAA")

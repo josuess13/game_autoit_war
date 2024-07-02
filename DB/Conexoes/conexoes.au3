@@ -14,16 +14,12 @@ Func desconecta_e_fecha_banco()
 	_SQLite_Close($hDatabase)
 EndFunc
 
-;~ Func insert($sql)
-
-;~ 	conecta_e_inicia_banco()
-;~ 	$sSQL = "INSERT INTO imagens_recrutas (recruta_id, imagem) VALUES ('1', '" & $caminho_imagem & "');"
-
-;~ 	_SQLite_Exec($hDatabase, $sSQL)
-;~ 	If @error Then MsgBox($MB_ICONERROR, "Erro", "Erro ao inserir dados na tabela.")
-;~ 	desconecta_e_fecha_banco()
-
-;~ EndFunc
+Func insert($sql)
+	conecta_e_inicia_banco()
+	_SQLite_Exec($hDatabase, $sql)
+	If @error Then MsgBox($MB_ICONERROR, "Erro", "Erro ao inserir dados na tabela.")
+	desconecta_e_fecha_banco()
+EndFunc
 
 Func retorna_consulta_sql($sql)
 	Local $hQuery, $aNames
@@ -33,15 +29,7 @@ Func retorna_consulta_sql($sql)
 	_SQLite_Query(-1, $sql, $hQuery)
 	_SQLite_FetchData($hQuery, $aNames)
 
-
-	If IsArray($aNames) Then
-		; Se houver resultados, mostrar uma mensagem de sucesso com o ID do jogador
-		;MsgBox($MB_OK, "Sucesso", "Login bem-sucedido! ID do jogador: " & $aNames[0])
-		;_ArrayDisplay($aNames)
-	Else
-		; Se não houver resultados, mostrar uma mensagem de erro
-		MsgBox($MB_OK, "Erro", "Login ou senha incorretos!")
-	EndIf
+	If Not IsArray($aNames) Then MsgBox($MB_OK, "Erro", "Erro ao retrnar dados")
 
 	_SQLite_QueryFinalize($hQuery)
 
