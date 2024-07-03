@@ -8,8 +8,17 @@ Func tela_recrutar_guerreiros()
 
     ; Grid
     Global $listar_guerreiros_recrutas = GUICtrlCreateListView("Guerreiro | Ataque | Defesa | Inteligência | Força | Agilidade", 20, 20, 455, 560)
-    GUICtrlCreateListViewItem("Thor Odinson | 10 | 9 | 1 | 2 | 1", $listar_guerreiros_recrutas)
-    GUICtrlCreateListViewItem("Hercules Scrafs | 10 | 9 | 1 | 2 | 1", $listar_guerreiros_recrutas)
+    
+    conecta_e_inicia_banco()
+	Local $aResult, $iRows, $aNames
+    Local $consulta_recrutas = 'select nome, ataque, defesa, inteligencia, forca, agilidade from recrutas where id_jogador = (SELECT id FROM jogadores WHERE login = "' & $usuario_logado &'");'
+	Local $faz_consulta = _SQLite_GetTableData2D($hDatabase, $consulta_recrutas, $aResult, $iRows, $aNames)
+    desconecta_e_fecha_banco()
+
+    For $i = 0 To $iRows -1
+        MsgBox(0, "", $aResult[$i][0] & " - " & $aResult[$i][1] & " - " & $aResult[$i][2] & " - ")
+		GUICtrlCreateListViewItem($aResult[$i][0] & "|" & $aResult[$i][1] & "|" & $aResult[$i][2] & "|" & $aResult[$i][3] & "|" & $aResult[$i][4] & "|" & $aResult[$i][5] & "|", $listar_guerreiros_recrutas)
+	Next
 
     _GUICtrlListView_SetColumnWidth($listar_guerreiros_recrutas, 0, 120)
     _GUICtrlListView_SetColumnWidth($listar_guerreiros_recrutas, 1, 60)
@@ -22,9 +31,9 @@ Func tela_recrutar_guerreiros()
 	_GUICtrlListView_SetTextColor($listar_guerreiros_recrutas, 0x000000)
 
     ; Imagem do guerreiro
-    local $imagem_guerreiro = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\herois\teste2.bmp", 485, 20, 300, 400)
-    If @error Then MsgBox(0, "", "Erro ao mostrar imagem")
-    GUICtrlSetState($imagem_guerreiro, $GUI_DISABLE)
+    ;~ local $imagem_guerreiro = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\herois\teste2.bmp", 485, 20, 300, 400)
+    ;~ If @error Then MsgBox(0, "", "Erro ao mostrar imagem")
+    ;~ GUICtrlSetState($imagem_guerreiro, $GUI_DISABLE)
 
     ;card
     GUICtrlCreateGroup("16 Anos", 485, 430, 300, 100)

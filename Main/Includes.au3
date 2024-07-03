@@ -1,6 +1,6 @@
 #include-once
 
-Global $tela_login, $input_login, $input_senha, $hDatabase
+Global $tela_login, $input_login, $input_senha, $hDatabase, $usuario_logado
 Global $sDatabase = @ScriptDir & "\..\DB\DB.db"
 
 #include <GUIConstantsEx.au3>

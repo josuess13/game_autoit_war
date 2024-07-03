@@ -54,6 +54,7 @@ Func criar_tela_login()
                 ControlFocus($tela_login, "text",$input_senha)
             Case $button_login
                 If validar_login_e_senha() == "OK" Then
+                    $usuario_logado = ControlGetText($tela_login, "", $input_login)
                     GUIDelete($tela_login)
                     tela_principal()
                     ExitLoop
@@ -61,6 +62,7 @@ Func criar_tela_login()
             Case $button_cadastrar
                 Local $cadastro = cadastra_novo_jogador()
                 If $cadastro == "Cadastrado" Then
+                    $usuario_logado = ControlGetText($tela_login, "", $input_login)
                     GUIDelete($tela_login)
                     tela_principal()
                     ExitLoop

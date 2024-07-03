@@ -23,18 +23,20 @@ EndFunc
 
 Func retorna_consulta_sql($sql)
 	Local $hQuery, $aNames
-
 	conecta_e_inicia_banco()
-
 	_SQLite_Query(-1, $sql, $hQuery)
 	_SQLite_FetchData($hQuery, $aNames)
-
-	If Not IsArray($aNames) Then MsgBox($MB_OK, "Erro", "Erro ao retrnar dados")
-
+	If Not IsArray($aNames) Then MsgBox($MB_OK, "Erro", "Erro ao retornar dados")
 	_SQLite_QueryFinalize($hQuery)
-
 	desconecta_e_fecha_banco()
-
 	Return($aNames[0])
+EndFunc
 
+Func retorna_consulta_tabela_sql($sql)
+	conecta_e_inicia_banco()
+	Local $aResult, $iRows, $aNames
+	Local $faz_consulta = _SQLite_GetTableData2D($hDatabase, $sql, $aResult, $iRows, $aNames)
+	desconecta_e_fecha_banco()
+	Local $retorno[2] = [$iRows, $aResult]
+	Return($retorno)
 EndFunc

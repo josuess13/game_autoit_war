@@ -53,7 +53,4 @@ Func cadastra_novo_jogador()
             Return
         EndIf
     EndIf
-
-
-
 EndFunc
