@@ -1,6 +1,6 @@
-CREATE TABLE "jogadores" (  -- 1
+CREATE TABLE "jogadores" (
 	"id"	INTEGER NOT NULL,
-	"login"	TEXT NOT NULL,
+	"login"	TEXT NOT NULL UNIQUE,
 	"senha"	TEXT NOT NULL,
 	"dias_jogados"	INTEGER NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
@@ -47,12 +47,12 @@ CREATE TABLE "recrutas" (
 	"forca"	NUMERIC NOT NULL,
 	"agilidade"	NUMERIC NOT NULL,
 	"idade"	INTEGER NOT NULL,
-	"imagem_recruta_masculinos"	INTEGER,
-	"imagem_recruta_femininos"	INTEGER,
+	"imagem_recruta_masculinos_id"	INTEGER,
+	"imagem_recruta_femininos_id"	INTEGER,
 	"status_recruta"	INTEGER NOT NULL,
 	"sexo"	TEXT NOT NULL,
-	FOREIGN KEY("imagem_recruta_masculinos") REFERENCES "imagem_recruta_masculinos"("id"),
-	FOREIGN KEY("imagem_recruta_femininos") REFERENCES "imagem_recruta_femininos"("id"),
+	FOREIGN KEY("imagem_recruta_masculinos_id") REFERENCES "imagem_recruta_masculinos"("id"),
+	FOREIGN KEY("imagem_recruta_femininos_id") REFERENCES "imagem_recruta_femininos"("id"),
 	FOREIGN KEY("id_jogador") REFERENCES "jogadores"("id"),
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
