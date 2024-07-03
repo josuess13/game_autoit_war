@@ -1,3 +1,20 @@
+-- TESTE
+INSERT INTO imagem_recruta_masculinos(caminho_imagem) values("Imagens\herois\recrutas\teo.bmp");
+INSERT INTO imagem_recruta_masculinos(caminho_imagem) values("Imagens\herois\recrutas\josefer.bmp");
+INSERT INTO imagem_recruta_masculinos(caminho_imagem) values("Imagens\herois\recrutas\aureo.bmp");
+
+INSERT INTO imagem_guerreiros_masculinos(caminho_imagem) values("Imagens\herois\guerreiros\teo.bmp");
+INSERT INTO imagem_guerreiros_masculinos(caminho_imagem) values("Imagens\herois\guerreiros\josefer.bmp");
+INSERT INTO imagem_guerreiros_masculinos(caminho_imagem) values("Imagens\herois\guerreiros\aureo.bmp");
+
+INSERT INTO imagem_recruta_femininos(caminho_imagem) values("Imagens\herois\recrutas\sarah.bmp");
+INSERT INTO imagem_recruta_femininos(caminho_imagem) values("Imagens\herois\recrutas\miah.bmp");
+INSERT INTO imagem_recruta_femininos(caminho_imagem) values("Imagens\herois\recrutas\alice.bmp");
+
+INSERT INTO imagem_guerreiros_femininos(caminho_imagem) values("Imagens\herois\guerreiros\sarah.bmp");
+INSERT INTO imagem_guerreiros_femininos(caminho_imagem) values("Imagens\herois\guerreiros\miah.bmp");
+INSERT INTO imagem_guerreiros_femininos(caminho_imagem) values("Imagens\herois\guerreiros\alice.bmp");
+-- END TESTE
 
 INSERT INTO nomes_masculinos(nome) VALUES('Achilles');
 INSERT INTO nomes_masculinos(nome) VALUES('Adonis');

@@ -22,5 +22,3 @@ Global $sDatabase = @ScriptDir & "\..\DB\DB.db"
 #include "Guerreiros\Recrutar.au3"
 #include "..\DB\Conexoes\conexoes.au3"
 #include "..\DB\Conexoes\conexoes_login.au3"
-
-;If FileExists(@ScriptDir & "\..\DB\DB.db" ) Then MsgBox(0, "", "AAAAAAAAAAAA")
