@@ -89,3 +89,22 @@ BEGIN
     )
     WHERE nome = NEW.nome AND id != NEW.id AND NEW.sexo = 'M';
 END;
+
+CREATE TRIGGER IF NOT EXISTS corrige_nomes_guerreiros_duplicados
+AFTER UPDATE OF nome ON guerreiros
+FOR EACH ROW
+BEGIN
+    -- Verifica e corrige nomes duplicados femininos
+    UPDATE guerreiros
+    SET nome = (
+        (SELECT nome FROM nomes_femininos ORDER BY RANDOM() LIMIT 1) || ' ' || (SELECT sobrenome FROM sobrenomes ORDER BY RANDOM() LIMIT 1)
+    )
+    WHERE nome = NEW.nome AND id != NEW.id AND NEW.sexo = 'F';
+
+    -- Verifica e corrige nomes duplicados masculinos
+    UPDATE guerreiros
+    SET nome = (
+        (SELECT nome FROM nomes_masculinos ORDER BY RANDOM() LIMIT 1) || ' ' || (SELECT sobrenome FROM sobrenomes ORDER BY RANDOM() LIMIT 1)
+    )
+    WHERE nome = NEW.nome AND id != NEW.id AND NEW.sexo = 'M';
+END;

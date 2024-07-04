@@ -31,12 +31,3 @@ Func retorna_consulta_sql($sql)
 	desconecta_e_fecha_banco()
 	Return($aNames[0])
 EndFunc
-
-Func retorna_consulta_tabela_sql($sql)
-	conecta_e_inicia_banco()
-	Local $aResult, $iRows, $aNames
-	Local $faz_consulta = _SQLite_GetTableData2D($hDatabase, $sql, $aResult, $iRows, $aNames)
-	desconecta_e_fecha_banco()
-	Local $retorno[2] = [$iRows, $aResult]
-	Return($retorno)
-EndFunc

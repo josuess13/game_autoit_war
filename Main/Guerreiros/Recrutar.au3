@@ -16,7 +16,6 @@ Func tela_recrutar_guerreiros()
     desconecta_e_fecha_banco()
 
     For $i = 0 To $iRows -1
-        MsgBox(0, "", $aResult[$i][0] & " - " & $aResult[$i][1] & " - " & $aResult[$i][2] & " - ")
 		GUICtrlCreateListViewItem($aResult[$i][0] & "|" & $aResult[$i][1] & "|" & $aResult[$i][2] & "|" & $aResult[$i][3] & "|" & $aResult[$i][4] & "|" & $aResult[$i][5] & "|", $listar_guerreiros_recrutas)
 	Next
 
@@ -29,31 +28,29 @@ Func tela_recrutar_guerreiros()
 	_GUICtrlListView_SetTextBkColor($listar_guerreiros_recrutas, 0xE0E0E0)
 	_GUICtrlListView_SetBkColor($listar_guerreiros_recrutas, 0xFFFFFF)
 	_GUICtrlListView_SetTextColor($listar_guerreiros_recrutas, 0x000000)
-
-    ; Imagem do guerreiro
-    ;~ local $imagem_guerreiro = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\herois\teste2.bmp", 485, 20, 300, 400)
-    ;~ If @error Then MsgBox(0, "", "Erro ao mostrar imagem")
-    ;~ GUICtrlSetState($imagem_guerreiro, $GUI_DISABLE)
+    
 
     ;card
     GUICtrlCreateGroup("16 Anos", 485, 430, 300, 100)
     GUICtrlSetFont(-1, 18, 700, 0, "Arial Black")
 
-    Local $descricao_guerreiro = GUICtrlCreateLabel("Guerreiro forte e pronto para a luta", 490, 465, 290, 60)
+    Local $descricao_recruta = GUICtrlCreateLabel("Guerreiro forte e pronto para a luta", 490, 465, 290, 60)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
     GUICtrlSetColor(-1, $COLOR_ALICEBLUE)
 
     GUICtrlCreateGroup("", -99, -99, 1, 1) ;close group
 
     ; Botões
-    $btn_recrutar_guerreiro = GUICtrlCreateButton("Recrutar", 490, 540, 90, 40)
+    Local $btn_recrutar_guerreiro = GUICtrlCreateButton("Recrutar", 490, 540, 90, 40)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
-    $btn_recusar_guerreiro = GUICtrlCreateButton("Recusar", 590, 540, 90, 40)
+    Local $btn_recusar_guerreiro = GUICtrlCreateButton("Recusar", 590, 540, 90, 40)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
-    $btn_sair_guerreiro = GUICtrlCreateButton("Sair", 690, 540, 90, 40)
+    Local $btn_sair_guerreiro = GUICtrlCreateButton("Sair", 690, 540, 90, 40)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
     
     GUISetState(@SW_SHOW, $tela_recrutar_guerreiros)
+
+    Local $recruta_selecionado = identifica_recruta_selecionado()
 
     While 1
         Switch GUIGetMsg()
@@ -65,9 +62,23 @@ Func tela_recrutar_guerreiros()
                 GUISetState(@SW_DISABLE, $tela_recrutar_guerreiros)
                 MsgBox(0, "", selecionar_guerreiro_para_recrutar_no_grid())
                 GUISetState(@SW_ENABLE, $tela_recrutar_guerreiros)
+            Case identifica_recruta_selecionado() <> $recruta_selecionado
+                mostrar_imagem_recruta(identifica_recruta_selecionado())
+                $recruta_selecionado = identifica_recruta_selecionado()
+                Sleep(1000)
         EndSwitch
     WEnd
 
+EndFunc
+
+Func identifica_recruta_selecionado()
+    Local $index = _GUICtrlListView_GetSelectedIndices($listar_guerreiros_recrutas)
+
+    If $Index == "" Then Return
+
+    $index = Number($index)
+    Local $texto_do_item = _GUICtrlListView_GetItemText($listar_guerreiros_recrutas, $index)
+    Return $texto_do_item
 EndFunc
 
 Func selecionar_guerreiro_para_recrutar_no_grid()
@@ -83,4 +94,19 @@ Func selecionar_guerreiro_para_recrutar_no_grid()
     Local $texto_do_item = _GUICtrlListView_GetItemText($listar_guerreiros_recrutas, $index)
     
     Return $texto_do_item
+EndFunc
+
+Func mostrar_imagem_recruta($nome)
+
+    Local $caminho_sql = "Guerreiros\consulta_imagem_recruta.sql"
+    FileOpen($caminho_sql)
+    Local $select =  FileRead($caminho_sql) & "'" & $nome & "'"
+    FileClose($caminho_sql)
+
+    Local $caminho_imagem = retorna_consulta_sql($select)
+    
+    local $imagem_guerreiro = GUICtrlCreatePic($caminho_imagem, 485, 20, 300, 400)
+    If @error Then MsgBox(0, "", "Erro ao mostrar imagem")
+    GUICtrlSetState($imagem_guerreiro, $GUI_DISABLE)
+
 EndFunc
