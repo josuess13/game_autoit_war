@@ -52,12 +52,14 @@ BEGIN
 END;
 
 
-CREATE TRIGGER IF NOT EXISTS transforma_recruta_em_guerreiro
+CREATE TRIGGER IF NOT EXISTS transforma_recruta_em_guerreiro_e_deleta_recruta
 AFTER UPDATE OF status_recruta ON recrutas
 WHEN NEW.status_recruta = 1
 BEGIN
 	INSERT INTO guerreiros(id_jogador, nome, ataque, defesa, inteligencia, forca, agilidade, idade, imagem_guerreiros_masculinos_id, imagem_guerreiros_femininos_id, vitorias, nivel, sexo)
 	VALUES(new.id_jogador, NEW.nome, NEW.ataque, NEW.defesa, NEW.inteligencia, NEW.forca, NEW.agilidade, NEW.idade, NEW.imagem_recruta_masculinos_id, NEW.imagem_recruta_femininos_id, 0, 1, NEW.sexo);
+
+    DELETE FROM recrutas WHERE nome = OLD.nome;
 END;
 
 
