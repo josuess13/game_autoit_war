@@ -458,3 +458,8 @@ INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerr
 INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\3.bmp');
 INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\4.bmp');
 INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\5.bmp');
+
+INSERT INTO tipos_equipamentos(tipo) VALUES('Arma');
+INSERT INTO tipos_equipamentos(tipo) VALUES('Escudo');
+INSERT INTO tipos_equipamentos(tipo) VALUES('Capacete');
+INSERT INTO tipos_equipamentos(tipo) VALUES('Armadura');

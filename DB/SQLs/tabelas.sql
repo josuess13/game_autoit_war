@@ -100,3 +100,23 @@ CREATE TABLE IF NOT EXISTS "valores_5_a_10"(
 	"valor"	INTEGER NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
 )
+
+CREATE TABLE IF NOT EXISTS "tipos_equipamentos" (
+	"id"	INTEGER NOT NULL,
+	"tipo"	TEXT NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+CREATE TABLE IF NOT EXISTS "equipamentos" (
+	"id"	INTEGER NOT NULL,
+	"tipo"	INTEGER NOT NULL,
+	"nome"	TEXT NOT NULL,
+	"ataque"	NUMERIC,
+	"defesa"	NUMERIC,
+	"preco_compra"	NUMERIC NOT NULL,
+	"preco_venda"	NUMERIC NOT NULL,
+	"caminho_imagem"	TEXT NOT NULL,
+	"nivel"	INTEGER NOT NULL,
+	FOREIGN KEY("tipo") REFERENCES "tipos_equipamentos"("id"),
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
