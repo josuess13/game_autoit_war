@@ -8,11 +8,6 @@ Func tela_recrutar_guerreiros()
 
     listar_recrutas()
 
-    ; Cards
-    GUICtrlCreateGroup("16 Anos", 485, 430, 300, 100)
-    GUICtrlSetFont(-1, 18, 700, 0, "Arial Black")
-    GUICtrlCreateGroup("", -99, -99, 1, 1) ;close group
-
     ; Botões
     Local $btn_recrutar_guerreiro = GUICtrlCreateButton("Recrutar", 490, 540, 90, 40)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
@@ -33,6 +28,10 @@ Func tela_recrutar_guerreiros()
             Case $btn_recrutar_guerreiro
                 GUISetState(@SW_DISABLE, $tela_recrutar_guerreiros)
                 promover_recruta()
+                GUISetState(@SW_ENABLE, $tela_recrutar_guerreiros)
+            Case $btn_recusar_guerreiro
+                GUISetState(@SW_DISABLE, $tela_recrutar_guerreiros)
+                recusar_recruta()
                 GUISetState(@SW_ENABLE, $tela_recrutar_guerreiros)
             Case identifica_recruta_selecionado() <> "Sem_imagem"
                 If $recruta_selecionado <> identifica_recruta_selecionado() Then
@@ -58,7 +57,7 @@ Func identifica_recruta_selecionado()
 EndFunc
 
 Func mostrar_imagem_recruta($nome)
-
+    If $imagem_recruta <> 2 Then GUICtrlDelete($imagem_recruta) 
     Local $caminho_sql = "Guerreiros\consulta_imagem_recruta.sql"
     FileOpen($caminho_sql)
     Local $select =  FileRead($caminho_sql) & "'" & $nome & "'"
@@ -76,33 +75,72 @@ Func mostrar_imagem_recruta($nome)
 EndFunc
 
 Func promover_recruta()
-    Local $promover_a_guerreiro = mensagem_sim_ou_nao("Deseja cadastrar o jogador?", 0x800000, $COLOR_WHITESMOKE, $COLOR_WHITE)
-    If $promover_a_guerreiro == "Não" Then Return
-    
     Local $index = _GUICtrlListView_GetSelectedIndices($listar_guerreiros_recrutas)
     If $Index == "" Then
 		mensagem_aviso("Selecione um guerreiro para recrutar!", 0x1E69D2, $COLOR_WHITESMOKE, $COLOR_WHITE)
 		Return
 	EndIf
-
     $index = Number($index)
     Local $texto_do_item = _GUICtrlListView_GetItemText($listar_guerreiros_recrutas, $index)
+
+    Local $promover_a_guerreiro = mensagem_sim_ou_nao("Deseja promover o Recruta?", 0x800000, $COLOR_WHITESMOKE, $COLOR_WHITE)
+    If $promover_a_guerreiro == "Não" Then Return
+    
     insert('update recrutas set status_recruta = 1 where nome = "' & $texto_do_item & '"')
-    mensagem_aviso("Guerreiro promovido com sucesso!", 0x1E69D2, $COLOR_WHITESMOKE, $COLOR_WHITE)
+    mensagem_aviso("Recruta promovido com sucesso!", 0x1E69D2, $COLOR_WHITESMOKE, $COLOR_WHITE)
 
     GUICtrlDelete($imagem_recruta)
+    GUICtrlDelete($group_recrutas)
+    GUICtrlDelete($descricao_recruta)
     GUICtrlDelete($listar_guerreiros_recrutas)
     listar_recrutas()
 EndFunc
 
+Func recusar_recruta()
+    Local $index = _GUICtrlListView_GetSelectedIndices($listar_guerreiros_recrutas)
+    If $Index == "" Then
+		mensagem_aviso("Selecione um guerreiro!", 0x1E69D2, $COLOR_WHITESMOKE, $COLOR_WHITE)
+		Return
+	EndIf
+    $index = Number($index)
+    Local $texto_do_item = _GUICtrlListView_GetItemText($listar_guerreiros_recrutas, $index)
+    Local $conta_recrutas = retorna_consulta_sql('select count(id) from recrutas where id_jogador = (SELECT id FROM jogadores WHERE login = "' & $usuario_logado &'");')
+    Local $conta_guerreiros = retorna_consulta_sql('select count(id) from guerreiros where id_jogador = (SELECT id FROM jogadores WHERE login = "' & $usuario_logado &'");')
+    If $conta_recrutas == 1 And $conta_guerreiros == 0 Then
+        mensagem_aviso("Você precisa recrutar um guerreiro para jogar!", 0x1E69D2, $COLOR_WHITESMOKE, $COLOR_WHITE)
+        Return
+    EndIf
+    Local $recusar_recruta = mensagem_sim_ou_nao("Deseja Recusar o Recruta? " & @CRLF & "Ele não ficará mais disponível.", 0x800000, $COLOR_WHITESMOKE, $COLOR_WHITE)
+    If  $recusar_recruta == "Não" Then Return
+    
+    insert('DELETE FROM recrutas WHERE nome = "' & $texto_do_item & '"')
+    mensagem_aviso("Recruta Dispensado!", 0x1E69D2, $COLOR_WHITESMOKE, $COLOR_WHITE)
+
+    GUICtrlDelete($imagem_recruta)
+    GUICtrlDelete($group_recrutas)
+    GUICtrlDelete($descricao_recruta)
+    GUICtrlDelete($listar_guerreiros_recrutas)
+    listar_recrutas()
+    
+EndFunc
+
 Func mostrar_card_recruta($recruta)
+    If $group_recrutas <> 2 Then GUICtrlDelete($group_recrutas)
+    If $descricao_recruta <> 2 Then GUICtrlDelete($descricao_recruta)
+
     local $sexo_recruta = retorna_consulta_sql('select sexo from recrutas where nome = "' & $recruta_selecionado & '"')
     If $sexo_recruta == "M" Then $sexo_recruta = "o"
     If $sexo_recruta == "F" Then $sexo_recruta = "a"
+    
+    ; Cards
+    $group_recrutas = GUICtrlCreateGroup("16 Anos", 485, 430, 300, 100)
+    GUICtrlSetFont(-1, 18, 700, 0, "Arial Black")
 
     $descricao_recruta = GUICtrlCreateLabel("Guerreir" & $sexo_recruta & " forte e pront" & $sexo_recruta & " para a luta", 490, 465, 290, 60)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
     GUICtrlSetColor(-1, $COLOR_ALICEBLUE)
+
+    GUICtrlCreateGroup("", -99, -99, 1, 1) ;close group
 EndFunc
 
 Func listar_recrutas()
