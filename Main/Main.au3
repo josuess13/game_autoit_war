@@ -22,6 +22,10 @@ Func tela_principal()
                 GUIDelete($tela_principal)
                 tela_recrutar_guerreiros()
                 ExitLoop
+            Case $submenu_guerreiros_seus_guerreiros
+                GUIDelete($tela_principal)
+                tela_guerreiros()
+                ExitLoop
         EndSwitch
     WEnd
 

@@ -441,6 +441,20 @@ INSERT INTO imagem_recruta_masculinos(caminho_imagem) VALUES('..\Imagens\Recruta
 INSERT INTO imagem_recruta_masculinos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\masculinos\2.bmp');
 INSERT INTO imagem_recruta_masculinos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\masculinos\3.bmp');
 INSERT INTO imagem_recruta_masculinos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\masculinos\4.bmp');
+INSERT INTO imagem_recruta_masculinos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\masculinos\5.bmp');
 INSERT INTO imagem_recruta_femininos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\femininos\1.bmp');
 INSERT INTO imagem_recruta_femininos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\femininos\2.bmp');
 INSERT INTO imagem_recruta_femininos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\femininos\3.bmp');
+INSERT INTO imagem_recruta_femininos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\femininos\4.bmp');
+INSERT INTO imagem_recruta_femininos(caminho_imagem) VALUES('..\Imagens\Recrutas\recrutas\femininos\5.bmp');
+
+INSERT INTO imagem_guerreiros_masculinos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\masculinos\1.bmp');
+INSERT INTO imagem_guerreiros_masculinos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\masculinos\2.bmp');
+INSERT INTO imagem_guerreiros_masculinos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\masculinos\3.bmp');
+INSERT INTO imagem_guerreiros_masculinos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\masculinos\4.bmp');
+INSERT INTO imagem_guerreiros_masculinos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\masculinos\5.bmp');
+INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\1.bmp');
+INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\2.bmp');
+INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\3.bmp');
+INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\4.bmp');
+INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\5.bmp');

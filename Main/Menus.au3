@@ -1,8 +1,8 @@
 Func criar_menus()
 
     Global $menu_guerreiro = GUICtrlCreateMenu("Guerreiros")
-    Global $submenu_guerreiros_recrutar = GUICtrlCreateMenuItem("Recrutar", $menu_guerreiro)
     Global $submenu_guerreiros_seus_guerreiros = GUICtrlCreateMenuItem("Seus Guerreiros", $menu_guerreiro)
+    Global $submenu_guerreiros_recrutar = GUICtrlCreateMenuItem("Recrutar", $menu_guerreiro)
     Global $submenu_guerreiros_guerreiros_rivais = GUICtrlCreateMenuItem("Guerreiros Rivais", $menu_guerreiro)
 
     Global $menu_equipamentos = GUICtrlCreateMenu("Equipamentos")

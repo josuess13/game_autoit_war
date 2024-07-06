@@ -38,6 +38,8 @@ Func tela_recrutar_guerreiros()
                     mostrar_imagem_recruta(identifica_recruta_selecionado())
                     $recruta_selecionado = identifica_recruta_selecionado()
                     If $recruta_selecionado <> 1 And $recruta_selecionado <> "Sem_imagem" Then 
+                        GUICtrlDelete($group_recrutas)
+                        GUICtrlDelete($descricao_recruta)
                         mostrar_card_recruta($recruta_selecionado)
                     EndIf
                 EndIf

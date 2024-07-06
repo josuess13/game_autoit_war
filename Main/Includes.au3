@@ -1,7 +1,8 @@
 #include-once
 
-Global $tela_login, $input_login, $input_senha, $hDatabase, $usuario_logado, $imagem_recruta = 2, $recruta_selecionado = 1,  $descricao_recruta = 2, $listar_guerreiros_recrutas
-Global $group_recrutas = 2
+Global $tela_login, $input_login, $input_senha, $hDatabase, $usuario_logado
+Global $imagem_recruta = 2, $recruta_selecionado = 1,  $descricao_recruta = 2, $listar_guerreiros_recrutas, $group_recrutas = 2
+Global $imagem_guerreiro = 2, $guerreiro_selecionado = 1, $listar_guerreiros
 Global $sDatabase = @ScriptDir & "\..\DB\DB.db"
 
 #include <GUIConstantsEx.au3>
@@ -21,5 +22,6 @@ Global $sDatabase = @ScriptDir & "\..\DB\DB.db"
 #include <SQLite.dll.au3>
 
 #include "Guerreiros\Recrutar.au3"
+#include "Guerreiros\Guerreiros.au3"
 #include "..\DB\Conexoes\conexoes.au3"
 #include "..\DB\Conexoes\conexoes_login.au3"
