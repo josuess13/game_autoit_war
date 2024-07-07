@@ -120,3 +120,29 @@ CREATE TABLE IF NOT EXISTS "equipamentos" (
 	FOREIGN KEY("tipo") REFERENCES "tipos_equipamentos"("id"),
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
+
+CREATE TABLE IF NOT EXISTS "equipamentos_comprados" (
+	"id"	INTEGER NOT NULL,
+	"tipo"	INTEGER NOT NULL,
+	"nome"	TEXT NOT NULL,
+	"ataque"	NUMERIC,
+	"defesa"	NUMERIC,
+	"preco_compra"	NUMERIC NOT NULL,
+	"preco_venda"	NUMERIC NOT NULL,
+	"caminho_imagem"	TEXT NOT NULL,
+	"nivel"	INTEGER NOT NULL,
+	"jogador_id"	INTEGER NOT NULL,
+	FOREIGN KEY("tipo") REFERENCES "tipos_equipamentos"("id"),
+	FOREIGN KEY("jogador_id") REFERENCES "jogadores"("id"),
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+
+CREATE TABLE IF NOT EXISTS "equipamentos_guerreiros"(
+	"id"	INTEGER NOT NULL,
+	"guerreiros_id" INTEGER NOT NULL,
+	"equipamentos_id" INTEGER NOT NULL,
+	FOREIGN KEY("guerreiros_id") REFERENCES "guerreiros"("id"),
+	FOREIGN KEY("equipamentos_id") REFERENCES "equipamentos_comprados"("id"),
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+

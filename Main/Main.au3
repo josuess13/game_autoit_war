@@ -3,14 +3,13 @@
 Func tela_principal()
 
     Global $tela_principal = GUICreate("", 800, 600, -1, -1, $WS_POPUP)
-
-    local $plano_fundo = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\Main_pf.png", 0, 0, 800, 600)
     WinSetOnTop($tela_principal, "",0)
 
-    criar_menus()
-
+    local $plano_fundo = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\Main_pf.png", 0, 0, 800, 600)
     ; Move as imagens para o fundo
     GUICtrlSetState($plano_fundo, $GUI_DISABLE)
+
+    criar_menus()
 
     GUISetState(@SW_SHOW, $tela_principal)
 
@@ -25,6 +24,10 @@ Func tela_principal()
             Case $submenu_guerreiros_seus_guerreiros
                 GUIDelete($tela_principal)
                 tela_guerreiros()
+                ExitLoop
+            Case $submenu_equipamentos_arsenal
+                GUIDelete($tela_principal)
+                tela_arsenal()
                 ExitLoop
         EndSwitch
     WEnd

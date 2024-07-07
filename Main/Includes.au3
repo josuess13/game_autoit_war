@@ -23,5 +23,6 @@ Global $sDatabase = @ScriptDir & "\..\DB\DB.db"
 
 #include "Guerreiros\Recrutar.au3"
 #include "Guerreiros\Guerreiros.au3"
+#include "Equipamentos\Arsenal.au3"
 #include "..\DB\Conexoes\conexoes.au3"
 #include "..\DB\Conexoes\conexoes_login.au3"
