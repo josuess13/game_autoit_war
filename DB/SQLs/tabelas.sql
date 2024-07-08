@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS "jogadores" (
 	"login"	TEXT NOT NULL UNIQUE,
 	"senha"	TEXT NOT NULL,
 	"dias_jogados"	INTEGER NOT NULL,
+	"dinheiro"	REAL NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
 
