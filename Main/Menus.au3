@@ -9,7 +9,7 @@ Func criar_menus()
     Global $submenu_equipamentos_arsenal = GUICtrlCreateMenuItem("Arsenal", $menu_equipamentos)
     Global $submenu_equipamentos_armas = GUICtrlCreateMenuItem("Armas", $menu_equipamentos)
     Global $submenu_equipamentos_escudos = GUICtrlCreateMenuItem("Escudos", $menu_equipamentos)
-    Global $submenu_equipamentos_Capacetes = GUICtrlCreateMenuItem("Capacetes", $menu_equipamentos)
+    Global $submenu_equipamentos_capacetes = GUICtrlCreateMenuItem("Capacetes", $menu_equipamentos)
 
     Global $menu_cavalos = GUICtrlCreateMenu("Cavalos")
     Global $submenu_cavalos_seu_estabulo = GUICtrlCreateMenuItem("Seu Estábulo", $menu_cavalos)

@@ -36,9 +36,9 @@ Func tela_arsenal()
     Local $btn_ver_capacetes = GUICtrlCreateButton("Ver", 715, 480, 70, 40)
     GUICtrlSetFont(-1, 8, "", 0, "Arial Black")
     
-    mostrar_armas()
-    mostrar_escudos()
-    mostrar_capacetes()
+    mostrar_armas_arsenal()
+    mostrar_escudos_arsenal()
+    mostrar_capacetes_arsenal()
 
     Local $btn_sair_equipamentos = GUICtrlCreateButton("Sair", 695, 540, 90, 40)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
@@ -65,7 +65,7 @@ Func tela_arsenal()
 
 EndFunc
 
-Func mostrar_armas()
+Func mostrar_armas_arsenal()
     GUICtrlCreateListView("Espada | Ataque | Guerreiro", 10, 20, 250, 450)
     GUICtrlSetBkColor(-1, $COLOR_BROWN)
     GUICtrlSetColor(-1, $COLOR_DARKRED)
@@ -80,7 +80,7 @@ Func mostrar_armas()
 
 EndFunc
 
-Func mostrar_escudos()
+Func mostrar_escudos_arsenal()
     GUICtrlCreateListView("Escudo | Defesa | Guerreiro", 275, 20, 250, 450)
     GUICtrlSetBkColor(-1, $COLOR_BROWN)
     GUICtrlSetColor(-1, $COLOR_DARKRED)
@@ -94,7 +94,7 @@ Func mostrar_escudos()
 
 EndFunc
 
-Func mostrar_capacetes()
+Func mostrar_capacetes_arsenal()
     GUICtrlCreateListView("Capacete | Defesa | Guerreiro", 540, 20, 250, 450)
     GUICtrlSetBkColor(-1, $COLOR_BROWN)
     GUICtrlSetColor(-1, $COLOR_DARKRED)

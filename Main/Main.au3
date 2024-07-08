@@ -29,6 +29,18 @@ Func tela_principal()
                 GUIDelete($tela_principal)
                 tela_arsenal()
                 ExitLoop
+            Case $submenu_equipamentos_armas
+                GUIDelete($tela_principal)
+                tela_armas()
+                ExitLoop
+            case $submenu_equipamentos_escudos
+                GUIDelete($tela_principal)
+                tela_escudos()
+                ExitLoop
+            Case $submenu_equipamentos_capacetes
+                GUIDelete($tela_principal)
+                tela_capacetes()
+                ExitLoop
         EndSwitch
     WEnd
 
