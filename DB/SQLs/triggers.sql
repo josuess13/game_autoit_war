@@ -110,3 +110,27 @@ BEGIN
     )
     WHERE nome = NEW.nome AND id != NEW.id AND NEW.sexo = 'M';
 END;
+
+CREATE TRIGGER IF NOT EXISTS disponibiliza_equipamentos
+AFTER UPDATE OF dias_jogados ON jogadores
+FOR EACH ROW
+BEGIN
+    UPDATE equipamentos SET status_equipamento = 1 WHERE nivel = NEW.nivel AND dias_jogados >= NEW.dias_jogados;
+END;
+
+CREATE TRIGGER IF NOT EXISTS atualiza_nivel_jogador
+AFTER UPDATE OF dias_jogados ON jogadores
+FOR EACH ROW
+WHEN NEW.dias_jogados % 100 = 0 AND NEW.dias_jogados > 0
+BEGIN
+    UPDATE jogadores SET nivel = NEW.dias_jogados % 100;
+END;
+
+
+CREATE TRIGGER IF NOT EXISTS atualiza_dias_jogados_jogador
+AFTER UPDATE OF ultimo_acesso ON jogadores
+FOR EACH ROW
+WHEN NEW.ultimo_acesso = date()
+BEGIN
+    UPDATE jogadores SET ultimo_acesso = date();
+END;

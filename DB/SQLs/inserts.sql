@@ -459,7 +459,42 @@ INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerr
 INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\4.bmp');
 INSERT INTO imagem_guerreiros_femininos(caminho_imagem) VALUES('..\Imagens\Guerreiros\simples\femininos\5.bmp');
 
-INSERT INTO tipos_equipamentos(tipo) VALUES('Arma');
-INSERT INTO tipos_equipamentos(tipo) VALUES('Escudo');
-INSERT INTO tipos_equipamentos(tipo) VALUES('Capacete');
-INSERT INTO tipos_equipamentos(tipo) VALUES('Armadura');
+INSERT INTO tipos_equipamentos(id, tipo) VALUES(1,'Arma');
+INSERT INTO tipos_equipamentos(id, tipo) VALUES(2 ,'Escudo');
+INSERT INTO tipos_equipamentos(id, tipo) VALUES(3 ,'Capacete');
+
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Espada nível 1", 1, 0, 100, 80, '..\Imagens\Equipamentos\Armas\Espada_nivel_1.bmp', 1, 0, 1);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Espada nível 2", 2, 0, 200, 180, '..\Imagens\Equipamentos\Armas\Espada_nivel_2.bmp', 2, 0, 30);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Espada nível 3", 3, 0, 300, 280, '..\Imagens\Equipamentos\Armas\Espada_nivel_3.bmp', 3, 0, 50);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Espada nível 4", 4, 1, 400, 380, '..\Imagens\Equipamentos\Armas\Espada_nivel_4.bmp', 4, 0, 70);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Espada nível 5", 5, 2, 500, 500, '..\Imagens\Equipamentos\Armas\Espada_nivel_5.bmp', 5, 0, 100);
+
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Lança nível 1", 1, 0, 80, 60, '..\Imagens\Equipamentos\Armas\Lanca_nivel_5.bmp', 1, 0, 1);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Lança nível 2", 2, 0, 180, 160, '..\Imagens\Equipamentos\Armas\Lanca_nivel_5.bmp', 2, 0, 25);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Lança nível 3", 3, 0, 280, 260, '..\Imagens\Equipamentos\Armas\Lanca_nivel_5.bmp', 3, 0, 50);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Lança nível 4", 4, 1, 380, 360, '..\Imagens\Equipamentos\Armas\Lanca_nivel_5.bmp', 4, 0, 60);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Lança nível 5", 5, 2, 480, 480, '..\Imagens\Equipamentos\Armas\Lanca_nivel_5.bmp', 5, 0, 80);
+
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Machado nível 1", 1, 0, 90, 50, '..\Imagens\Equipamentos\Armas\Machado_nivel_5.bmp', 1, 0, 1);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Machado nível 2", 2, 0, 190, 150, '..\Imagens\Equipamentos\Armas\Machado_nivel_5.bmp', 2, 0, 28);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Machado nível 3", 3, 0, 290, 250, '..\Imagens\Equipamentos\Armas\Machado_nivel_5.bmp', 3, 0, 42);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Machado nível 4", 4, 1, 390, 350, '..\Imagens\Equipamentos\Armas\Machado_nivel_5.bmp', 4, 0, 60);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Machado nível 5", 5, 2, 490, 450, '..\Imagens\Equipamentos\Armas\Machado_nivel_5.bmp', 5, 0, 90);
+
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Martelo nível 1", 1, 0, 110, 90, '..\Imagens\Equipamentos\Armas\Martelo_nivel_5.bmp', 1, 0, 1);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Martelo nível 2", 2, 0, 210, 190, '..\Imagens\Equipamentos\Armas\Martelo_nivel_5.bmp', 2, 0, 20);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Martelo nível 3", 3, 0, 310, 290, '..\Imagens\Equipamentos\Armas\Martelo_nivel_5.bmp', 3, 0, 40);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Martelo nível 4", 4, 1, 410, 390, '..\Imagens\Equipamentos\Armas\Martelo_nivel_5.bmp', 4, 0, 60);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(1, "Martelo nível 5", 5, 2, 510, 490, '..\Imagens\Equipamentos\Armas\Martelo_nivel_5.bmp', 5, 0, 80);
+
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(2, "Escudo nível 1", 0, 1, 100, 90, '..\Imagens\Equipamentos\Escudos\Escudo_nivel_5.bmp', 1, 0, 1);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(2, "Escudo nível 2", 0, 2, 200, 190, '..\Imagens\Equipamentos\Escudos\Escudo_nivel_5.bmp', 2, 0, 20);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(2, "Escudo nível 3", 0, 3, 300, 290, '..\Imagens\Equipamentos\Escudos\Escudo_nivel_5.bmp', 3, 0, 40);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(2, "Escudo nível 4", 0, 4, 400, 390, '..\Imagens\Equipamentos\Escudos\Escudo_nivel_5.bmp', 4, 0, 60);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(2, "Escudo nível 5", 1, 5, 500, 490, '..\Imagens\Equipamentos\Escudos\Escudo_nivel_5.bmp', 5, 0, 80);
+;
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(3, "Capacete nível 1", 0, 1, 100, 90, '..\Imagens\Equipamentos\Capacetes\Capacete_nivel_5.bmp', 1, 0, 1);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(3, "Capacete nível 2", 0, 2, 200, 190, '..\Imagens\Equipamentos\Capacetes\Capacete_nivel_5.bmp', 2, 0, 20);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(3, "Capacete nível 3", 0, 3, 300, 290, '..\Imagens\Equipamentos\Capacetes\Capacete_nivel_5.bmp', 3, 0, 40);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(3, "Capacete nível 4", 0, 4, 400, 390, '..\Imagens\Equipamentos\Capacetes\Capacete_nivel_5.bmp', 4, 0, 60);
+INSERT INTO equipamentos(tipo, nome, ataque, defesa, preco_compra, preco_venda, caminho_imagem, nivel, status_equipamento, dias_jogados) VALUES(3, "Capacete nível 5", 1, 5, 500, 490, '..\Imagens\Equipamentos\Capacetes\Capacete_nivel_5.bmp', 5, 0, 80);

@@ -17,7 +17,10 @@ EndFunc
 Func insert($sql)
 	conecta_e_inicia_banco()
 	_SQLite_Exec($hDatabase, $sql)
-	If @error Then MsgBox($MB_ICONERROR, "Erro", "Erro ao inserir dados na tabela.")
+	If @error Then 
+		MsgBox($MB_ICONERROR, "Erro", "Erro ao inserir dados na tabela.")
+		Exit
+	EndIf
 	desconecta_e_fecha_banco()
 EndFunc
 
