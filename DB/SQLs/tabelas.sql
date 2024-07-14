@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS "equipamentos" (
 	"preco_venda"	NUMERIC NOT NULL,
 	"caminho_imagem"	TEXT NOT NULL,
 	"nivel"	INTEGER NOT NULL,
-	"status_equipamento" INTEGER NOT NULL, -- 0 disponível, 1 comprado
+	"status_equipamento" INTEGER NOT NULL, -- 0 bloqueado, 1 disponível
 	"dias_jogados" INTEGER NOT NULL,
 	FOREIGN KEY("tipo") REFERENCES "tipos_equipamentos"("id"),
 	PRIMARY KEY("id" AUTOINCREMENT)

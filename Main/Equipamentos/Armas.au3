@@ -13,10 +13,10 @@ Func tela_armas()
     mostrar_armas()
 
     ; Botões Armas
-    Local $btn_equipar_arma = GUICtrlCreateButton("Comprar", 20, 540, 400, 40)
+    Local $btn_comprar_arma = GUICtrlCreateButton("Comprar", 20, 540, 470, 40)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
 
-    Local $btn_sair_equipamentos = GUICtrlCreateButton("Sair", 430, 540, 350, 40)
+    Local $btn_sair_equipamentos = GUICtrlCreateButton("Sair", 500, 540, 280, 40)
     GUICtrlSetFont(-1, 12, "", 0, "Arial Black")
     
     GUISetState(@SW_SHOW, $tela_armas)
@@ -28,32 +28,60 @@ Func tela_armas()
                 GUIDelete($tela_armas)
                 tela_principal()
                 ExitLoop
-            ;~ Case identifica_guerreiro_selecionado() <> "Sem_imagem"
-            ;~     If $guerreiro_selecionado <> identifica_guerreiro_selecionado() Then
-            ;~         mostrar_imagem_guerreiro(identifica_guerreiro_selecionado())
-            ;~         $guerreiro_selecionado = identifica_guerreiro_selecionado()
-            ;~         ;~ If $guerreiro_selecionado <> 1 And $guerreiro_selecionado <> "Sem_imagem" Then 
-            ;~         ;~     mostrar_card_guerreiro($guerreiro_selecionado)
-            ;~         ;~ EndIf
-            ;~     EndIf
+            Case identifica_arma_selecionada() <> "Sem_imagem"
+                If $arma_selecionada <> identifica_arma_selecionada() Then
+                    mostrar_imagem_arma(identifica_arma_selecionada())
+                    $arma_selecionada = identifica_arma_selecionada()
+                EndIf
+            Case $btn_comprar_arma
+                MsgBox(0, "", identifica_arma_selecionada())
         EndSwitch
     WEnd
 
 EndFunc
 
+Func identifica_arma_selecionada()
+    Local $index = _GUICtrlListView_GetSelectedIndices($listar_armas)
+
+    If $Index == "" Then Return("Sem_imagem")
+
+    $index = Number($index)
+    Local $texto_do_item = _GUICtrlListView_GetItemText($listar_armas, $index)
+    Return $texto_do_item
+EndFunc
+
+Func mostrar_imagem_arma($nome)
+    If $imagem_arma <> 2 Then GUICtrlDelete($imagem_arma) 
+    
+    Local $select = "select caminho_imagem from equipamentos where nome = '" & $nome &"'"
+
+    Local $caminho_imagem = retorna_consulta_sql($select)
+    
+    $imagem_arma = GUICtrlCreatePic($caminho_imagem, 500, 20, 280, 300)
+    If @error Then 
+        MsgBox(0, "", "Erro ao mostrar imagem")
+    Else
+        GUICtrlSetState($imagem_arma, $GUI_DISABLE)
+    EndIf
+EndFunc
+
 Func mostrar_armas()
-    GUICtrlCreateListView("Arma | Ataque | Nível | Preço", 20, 20, 400, 500)
+    $listar_armas = GUICtrlCreateListView("Arma | Ataque | Defesa | Nível | Preço", 20, 20, 470, 500)
     GUICtrlSetBkColor(-1, $COLOR_BROWN)
-    GUICtrlSetColor(-1, $COLOR_DARKRED)
-    _GUICtrlListView_SetColumnWidth(-1, 0, 180)
-    _GUICtrlListView_SetColumnWidth(-1, 1, 70)
-    _GUICtrlListView_SetColumnWidth(-1, 2, 50)
-    _GUICtrlListView_SetColumnWidth(-1, 3, 95)
-
-    GUICtrlCreateListViewItem("Escalibur | 2.0 | 3 | 500",-1)
-    GUICtrlSetBkColor(-1, $COLOR_CADETBLUE)
-
-    local $plano_fundo = GUICtrlCreatePic("D:\projetos\game_autoit_war\Imagens\Equipamentos\Armas\Espada_nivel_1.bmp", 430, 70, 350, 400)
-    ; Move as imagens para o fundo
-    GUICtrlSetState($plano_fundo, $GUI_DISABLE)
+    
+    conecta_e_inicia_banco()
+	Local $aResult, $iRows, $aNames
+    Local $consulta_armas = 'select nome, ataque, defesa, nivel, preco_compra from equipamentos where status_equipamento = 1 and tipo = 1;'
+	Local $faz_consulta = _SQLite_GetTableData2D($hDatabase, $consulta_armas, $aResult, $iRows, $aNames)
+    desconecta_e_fecha_banco()
+    
+    For $i = 0 To $iRows -1
+		GUICtrlCreateListViewItem($aResult[$i][0] & "|" & $aResult[$i][1] & "|" & $aResult[$i][2] & "|" & $aResult[$i][3] & "|" & $aResult[$i][4] & "|", $listar_armas)
+	Next
+    
+    _GUICtrlListView_SetColumnWidth($listar_armas, 0, 180)
+    _GUICtrlListView_SetColumnWidth($listar_armas, 1, 70)
+    _GUICtrlListView_SetColumnWidth($listar_armas, 2, 70)
+    _GUICtrlListView_SetColumnWidth($listar_armas, 3, 50)
+    _GUICtrlListView_SetColumnWidth($listar_armas, 4, 95)
 EndFunc

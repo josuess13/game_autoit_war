@@ -72,7 +72,6 @@ Func mostrar_imagem_recruta($nome)
         MsgBox(0, "", "Erro ao mostrar imagem")
     Else
         GUICtrlSetState($imagem_recruta, $GUI_DISABLE)
-        $teste = 1
     EndIf
 EndFunc
 

@@ -37,9 +37,6 @@ Func tela_guerreiros()
                 If $guerreiro_selecionado <> identifica_guerreiro_selecionado() Then
                     mostrar_imagem_guerreiro(identifica_guerreiro_selecionado())
                     $guerreiro_selecionado = identifica_guerreiro_selecionado()
-                    ;~ If $guerreiro_selecionado <> 1 And $guerreiro_selecionado <> "Sem_imagem" Then 
-                    ;~     mostrar_card_guerreiro($guerreiro_selecionado)
-                    ;~ EndIf
                 EndIf
         EndSwitch
     WEnd
@@ -70,7 +67,6 @@ Func mostrar_imagem_guerreiro($nome)
         MsgBox(0, "", "Erro ao mostrar imagem")
     Else
         GUICtrlSetState($imagem_guerreiro, $GUI_DISABLE)
-        $teste = 1
     EndIf
 EndFunc
 

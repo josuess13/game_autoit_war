@@ -16,9 +16,9 @@ Func validar_login_e_senha()
 
     If $valida_jogador = 1 Then
         desconecta_e_fecha_banco()
+        insert("UPDATE jogadores SET dias_jogados = dias_jogados + 1 WHERE ultimo_acesso < date() AND login = '" & $captura_login & "'")
+        insert("UPDATE jogadores SET ultimo_acesso = date() WHERE login = '" & $captura_login & "'")
         Return("OK")
-        insert("UPDATE jogadores SET dias_jogados = dias_jogados + 1 WHERE ultimo_acesso < date() AND login = " & $captura_login)
-        insert("UPDATE jogadores SET ultimo_acesso = date() WHERE login = " & $captura_login)
     Else
         mensagem_aviso("Login ou Senha inválidos!", 0xFFA500, $COLOR_WHITESMOKE, $COLOR_BLACK)
         desconecta_e_fecha_banco()
@@ -49,8 +49,8 @@ Func cadastra_novo_jogador()
         Local $opcao = mensagem_sim_ou_nao("Deseja cadastrar o jogador?", 0x800000, $COLOR_WHITESMOKE, $COLOR_WHITE)
         If $opcao == "Sim" Then 
             mensagem_aviso("Bem Vindo, " & $captura_login & "!", 0x1E69D2, $COLOR_WHITESMOKE, $COLOR_WHITE)
-            insert('INSERT INTO jogadores(login, senha, dias_jogados, dinheiro) VALUES("' & $captura_login & '", "' & $captura_senha & '", 0, 0, 1, "0");')
-            insert("UPDATE jogadores SET ultimo_acesso = date() WHERE login = " & $captura_login)
+            insert('INSERT INTO jogadores(login, senha, dias_jogados, dinheiro, nivel, ultimo_acesso) VALUES("' & $captura_login & '", "' & $captura_senha & '", 0, 0, 1, "0");')
+            insert("UPDATE jogadores SET ultimo_acesso = date() WHERE login = '" & $captura_login & "'")
             Return("Cadastrado")
         Else
             Return
