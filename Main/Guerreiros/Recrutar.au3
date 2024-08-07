@@ -29,10 +29,12 @@ Func tela_recrutar_guerreiros()
                 GUISetState(@SW_DISABLE, $tela_recrutar_guerreiros)
                 promover_recruta()
                 GUISetState(@SW_ENABLE, $tela_recrutar_guerreiros)
+                WinActivate($tela_recrutar_guerreiros)
             Case $btn_recusar_guerreiro
                 GUISetState(@SW_DISABLE, $tela_recrutar_guerreiros)
                 recusar_recruta()
                 GUISetState(@SW_ENABLE, $tela_recrutar_guerreiros)
+                WinActivate($tela_recrutar_guerreiros)
             Case identifica_recruta_selecionado() <> "Sem_imagem"
                 If $recruta_selecionado <> identifica_recruta_selecionado() Then
                     mostrar_imagem_recruta(identifica_recruta_selecionado())

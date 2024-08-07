@@ -6,10 +6,6 @@ Func tela_armas()
     WinSetOnTop($tela_armas, "",0)
     GUISetBkColor(0x778899)
 
-    ;local $plano_fundo = GUICtrlCreatePic(@ScriptDir & "\..\Imagens\arsenal.png", 0, 0, 800, 600)
-    ; Move as imagens para o fundo
-    ;GUICtrlSetState($plano_fundo, $GUI_DISABLE)
-
     mostrar_armas()
 
     ; Botões Armas

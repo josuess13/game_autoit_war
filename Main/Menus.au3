@@ -41,7 +41,10 @@ Func criar_menus()
     Global $menu_guerra = GUICtrlCreateMenu("Guerra")
     Global $submenu_guerra_guerra = GUICtrlCreateMenuItem("Guerra", $menu_guerra)
 
+    Local $dinheiro = retorna_consulta_sql('select dinheiro from jogadores where login = "' & $usuario_logado & '"')
+    Global $menu_dinheiro = GUICtrlCreateMenu("Dinheiro: $ " & $dinheiro & "   ")
+
     Global $menu_sair = GUICtrlCreateMenu("Sair")
-    Global $submenu_sair_sair = GUICtrlCreateMenuItem("Sair", $menu_sair)
+    Global $submenu_sair_sair = GUICtrlCreateMenuItem("Sair", $menu_sair)  
 
 EndFunc
